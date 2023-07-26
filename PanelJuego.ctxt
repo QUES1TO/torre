@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=PanelJuego
+comment1.params=
+comment1.target=void\ addListenerToPilaRecursiva1()
+comment2.params=
+comment2.target=PanelJuego()
+comment2.text=public\ PilaRecursiva<PanelContenedor>\ getPilaRecursiva2()\r\n\ \ \ \ {\r\n\ \ \ \ \ \ \ \ //panelContenedor.addMouseMotionListener(new\ DiscoMouseMotionListener((Ventana)this.getParent()));\r\n\ \ \ \ }\r\n\ \ \ \ \ public\ PilaRecursiva<PanelContenedor>\ getPilaRecursiva2()\r\n\ \ \ \ {\r\n\ \ \ \ \ \ \ \ //panelContenedor.addMouseMotionListener(new\ DiscoMouseMotionListener((Ventana)this.getParent()));\r\n}
+comment3.params=
+comment3.target=void\ prepararEscenario()
+comment4.params=
+comment4.target=void\ llenarListaDeDiscos()
+comment5.params=limiteCaida\ discoSeleccionado\ centroPanelContenedor\ alturaPanelContenedor
+comment5.target=void\ animarDiscos(int,\ PanelContenedor,\ int,\ int)
+comment6.params=
+comment6.target=java.awt.Component\ content()
+numComments=7

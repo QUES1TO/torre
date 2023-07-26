@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=PilaRecursiva
+comment1.params=dato
+comment1.target=void\ push(java.lang.Object)
+comment2.params=
+comment2.target=int\ size()
+comment3.params=index
+comment3.target=void\ remove(int)
+comment4.params=
+comment4.target=void\ mostrarDatos()
+comment5.params=
+comment5.target=java.lang.String\ listarDatos()
+comment6.params=index
+comment6.target=java.lang.Object\ get(int)
+comment7.params=
+comment7.target=void\ marcarPosiciones()
+comment8.params=size
+comment8.target=void\ marcar(int)
+comment9.params=
+comment9.target=java.lang.Object\ pop()
+numComments=10

@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=PanelContenedor
+comment1.params=x\ y\ width\ height\ arcWidth\ color
+comment1.target=PanelContenedor(double,\ double,\ double,\ double,\ double,\ java.awt.Color)
+comment2.params=g
+comment2.target=void\ paint(java.awt.Graphics)
+comment3.params=
+comment3.target=void\ iniciarDisco()
+comment4.params=x
+comment4.target=void\ setPosX(int)
+comment5.params=y
+comment5.target=void\ setPosY(int)
+comment6.params=
+comment6.target=int\ getPosX()
+comment7.params=
+comment7.target=int\ getPosY()
+numComments=8

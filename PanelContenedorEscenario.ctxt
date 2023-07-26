@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=PanelContenedorEscenario
+comment1.params=x\ y\ width\ height\ arcWidth\ color
+comment1.target=PanelContenedorEscenario(double,\ double,\ double,\ double,\ double,\ java.awt.Color)
+comment2.params=limiteCaida
+comment2.target=void\ setLimiteCaida(int)
+comment3.params=
+comment3.target=int\ gettLimiteCaida()
+comment4.params=g
+comment4.target=void\ paint(java.awt.Graphics)
+comment5.params=
+comment5.target=void\ iniciarDisco()
+comment6.params=x
+comment6.target=void\ setPosX(int)
+comment7.params=y
+comment7.target=void\ setPosY(int)
+comment8.params=
+comment8.target=int\ getPosX()
+comment9.params=
+comment9.target=int\ getPosY()
+numComments=10

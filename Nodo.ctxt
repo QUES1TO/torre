@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=Nodo
+comment1.params=valor
+comment1.target=Nodo(java.lang.Object)
+comment2.params=
+comment2.target=java.lang.Object\ getValor()
+comment3.params=pos
+comment3.target=void\ setPos(int)
+numComments=4
