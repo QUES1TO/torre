@@ -8,8 +8,8 @@ public class PanelContenedor extends JPanel
     public PanelContenedor(double x, double y, double width, double height, double arcWidth, Color color)
     {
         setLayout(null);
-        disco = new Disco(x,y,width,height,20,color);
-        brillo = new Disco(x+5,y+4,width-15,height-17,20,Color.WHITE);
+        disco = new Disco(x,y,width-50,height,20,color);
+        brillo = new Disco(x+5,y+4,width-65,height-17,20,Color.WHITE);
         setOpaque(false);
         //setBackground(Color.GREEN);
     }

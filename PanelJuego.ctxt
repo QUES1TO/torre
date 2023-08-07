@@ -7,6 +7,7 @@ comment2.target=PanelJuego()
 comment2.text=public\ PilaRecursiva<PanelContenedor>\ getPilaRecursiva2()\r\n\ \ \ \ {\r\n\ \ \ \ \ \ \ \ //panelContenedor.addMouseMotionListener(new\ DiscoMouseMotionListener((Ventana)this.getParent()));\r\n\ \ \ \ }\r\n\ \ \ \ \ public\ PilaRecursiva<PanelContenedor>\ getPilaRecursiva2()\r\n\ \ \ \ {\r\n\ \ \ \ \ \ \ \ //panelContenedor.addMouseMotionListener(new\ DiscoMouseMotionListener((Ventana)this.getParent()));\r\n}
 comment3.params=
 comment3.target=void\ prepararEscenario()
+comment3.text=\ \ public\ void\ preInit(){\r\n\ \ \ \ \ \ \ fondo\=\ new\ ImageIcon(getClass().getResource("fondo.png"));\r\n\ \ \ \ }\r\n\ \ \ \ \r\n\ \ \ \ \ public\ void\ initComponents(){\r\n\ \ \ \ \ \ \ \ \ \r\n\ \ \ \ }\r\n\ \ \ \ \ public\ void\ paint(Graphics\ g){\r\n\ \ \ \ \ \ \ \ g.drawImage(fondo,0,0,getWidth(),getHeight(),this);\r\n\ \ \ \ }\r\n
 comment4.params=
 comment4.target=void\ llenarListaDeDiscos()
 comment5.params=limiteCaida\ discoSeleccionado\ centroPanelContenedor\ alturaPanelContenedor

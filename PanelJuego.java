@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.awt.event.*;
 public class PanelJuego extends JPanel
 {
+    
+    
+    
     private Graphics2D g2d;
     private ArrayList<Disco> brillos;
     private ArrayList<Disco> discos;
@@ -17,21 +20,24 @@ public class PanelJuego extends JPanel
     private final int MOVE_AMOUNT = 1; // Cantidad de movimiento en píxeles en cada iteración
     private final int DELAY = 10; // Retraso en milisegundos entre cada iteración del temporizador
     private PanelContenedorEscenario suelo;
-    private PanelContenedorEscenario pila1,pila2,pila3;
+    private PanelContenedorEscenario pila1,pila2,pila3,pila4,pila5,pila6;
     private int anchoDeDisco = 300;
     private int altoDeDisco = 20;
-    private PilaRecursiva<PanelContenedor> pilaRecursiva1, pilaRecursiva2,pilaRecursiva3;
+    private PilaRecursiva<PanelContenedor> pilaRecursiva1, pilaRecursiva2,pilaRecursiva3,pilaRecursiva4,pilaRecursiva5,pilaRecursiva6;
     private Robot robot;
     private int startY;
+    private ImageIcon fondo;
     
     private int dato = 0;
-    private JLabel label;
-     private JPanel panel;
+    private JLabel label, label2;
+     private JPanel panel, panel2 ,panel3,panel4,panel5;
+      private ImageIcon img;
+     
     public void addListenerToPilaRecursiva1()
     {
         Container container = getParent().getParent().getParent().getParent();
         pilaRecursiva1.get(pilaRecursiva1.size()-1).addMouseListener(new DiscoMouseListener());
-        pilaRecursiva1.get(pilaRecursiva1.size()-1).addMouseMotionListener(new DiscoMouseMotionListener((Ventana)container));
+         pilaRecursiva1.get(pilaRecursiva1.size()-1).addMouseMotionListener(new DiscoMouseMotionListener((Ventana)container));
     }
      /*public PilaRecursiva<PanelContenedor> getPilaRecursiva2()
     {
@@ -41,7 +47,7 @@ public class PanelJuego extends JPanel
     {
         //panelContenedor.addMouseMotionListener(new DiscoMouseMotionListener((Ventana)this.getParent()));
     }*/
-    public PanelJuego()
+   public PanelJuego()
     {
         setLayout(null);
         brillos = new ArrayList<Disco>();
@@ -55,37 +61,99 @@ public class PanelJuego extends JPanel
             e.printStackTrace();
         }
         
-        label = new JLabel("iso: 0 movimientos");
+        img= new ImageIcon(getClass().getResource("img4.jpg"));
+         label = new JLabel("iso: 0 movimientos");
         label.setBounds(60,0,200,200);
         label.setVisible(true);
         label.setBackground(Color.WHITE);
+        label.setForeground(Color.BLUE);
         add(label);
         
         panel=new JPanel();
         panel.setBounds(54, 93, 150, 20);
         panel.setVisible(true);
-        panel.setBackground(Color.white);
+        panel.setBackground(new Color(255, 255, 255, 150));
         add(panel);
+        
+        panel3=new JPanel();
+        panel3.setBounds(174, 340, 265, 420);
+        panel3.setVisible(true);
+        panel3.setBackground(new Color(44, 117, 255, 50));
+        add(panel3);
+        
+        panel4=new JPanel();
+        panel4.setBounds(474, 340, 265, 420);
+        panel4.setVisible(true);
+        panel4.setBackground(new Color(44, 117, 255, 50));
+        add(panel4);
+        
+        panel5=new JPanel();
+        panel5.setBounds(774, 340, 265, 420);
+        panel5.setVisible(true);
+        panel5.setBackground(new Color(44, 117, 255, 50));
+        add(panel5);
+             
+        label2 = new JLabel();
+        label2.setBounds(0,0,1200,1200);
+        label2.setVisible(true);
+        add(label2);
+        
+        panel2 = new JPanel();
+        panel2.setBounds(0,0,1200,1200);
+        Icon i4= new ImageIcon(img.getImage().getScaledInstance(panel2.getWidth(),panel2.getHeight(),Image.SCALE_DEFAULT));
+        label2.setIcon(i4);
+        panel2.setVisible(true);
+        add(panel2);        
     }
+  /*  public void preInit(){
+       fondo= new ImageIcon(getClass().getResource("fondo.png"));
+    }
+    
+     public void initComponents(){
+         
+    }
+     public void paint(Graphics g){
+        g.drawImage(fondo,0,0,getWidth(),getHeight(),this);
+    }
+ */
     public void prepararEscenario()
     {
+        
         pilaRecursiva1 = new PilaRecursiva<PanelContenedor>(); 
         pilaRecursiva2 = new PilaRecursiva<PanelContenedor>(); 
         pilaRecursiva3 = new PilaRecursiva<PanelContenedor>();
+        pilaRecursiva4 = new PilaRecursiva<PanelContenedor>();
+        pilaRecursiva5 = new PilaRecursiva<PanelContenedor>();
+        pilaRecursiva6 = new PilaRecursiva<PanelContenedor>();
         
-        suelo = new PanelContenedorEscenario(0,0,1200,20,20, Color.GREEN);
-        pila1 = new PanelContenedorEscenario(0,0,20,400,20, Color.GREEN);
-        pila2 = new PanelContenedorEscenario(0,0,20,400,20, Color.GREEN);
-        pila3 = new PanelContenedorEscenario(0,0,20,400,20, Color.GREEN);
-        suelo.setBounds(0,540,1200,20);
-        pila1.setBounds(300,150,20,400);
-        pila2.setBounds(600,150,20,400);
-        pila3.setBounds(900,150,20,400);
+        
+        pila4 = new PanelContenedorEscenario(0,0,25,393,20, Color.white);
+        pila5 = new PanelContenedorEscenario(0,0,25,393,20, Color.white);
+        pila6 = new PanelContenedorEscenario(0,0,25,393,20, Color.white);
+        
+        pila1 = new PanelContenedorEscenario(0,0,20,400,20, Color.BLACK);
+        pila2 = new PanelContenedorEscenario(0,0,20,400,20, Color.BLACK);
+        pila3 = new PanelContenedorEscenario(0,0,20,400,20, Color.BLACK);
+        suelo = new PanelContenedorEscenario(0,0,1200,500,20, Color.BLACK);
+        
+        pila4.setBounds(298,350,25,393);
+        pila5.setBounds(598,350,25,393);
+        pila6.setBounds(898,350,25,393);
+        
+        pila1.setBounds(300,350,20,400);
+        pila2.setBounds(600,350,20,400);
+        pila3.setBounds(900,350,20,400);
+        suelo.setBounds(0,740,1200,20);
+        
        
         add(pila1);
         add(pila2);
         add(pila3);
+        add(pila4);
+        add(pila5);
+        add(pila6);
         add(suelo);
+        
         
     }
     
@@ -93,9 +161,9 @@ public class PanelJuego extends JPanel
     {        
         for(int i = 0;i<cantidadDiscos;i++)
         {
-            PanelContenedor panelContenedor = new PanelContenedor(0, 0, anchoDeDisco, altoDeDisco, 20, Color.RED); 
+            PanelContenedor panelContenedor = new PanelContenedor(0, 0, anchoDeDisco, altoDeDisco, 20, Color.MAGENTA); 
             
-            int centoX=300-(anchoDeDisco/2)+(altoDeDisco/2);
+            int centoX=323-(anchoDeDisco/2)+(altoDeDisco/2);
             
             panelContenedor.setBounds(centoX,pila1.gettLimiteCaida(),anchoDeDisco,altoDeDisco);
             //panelContenedor.addMouseListener(new DiscoMouseListener());
@@ -122,20 +190,19 @@ public class PanelJuego extends JPanel
             
             dato++;
             label.setText("iso: " + dato+" "+"movimientos");
-        
-            
         }
+        
+       
+    
         public void mouseReleased(MouseEvent e) {
                
             int centroPanelContenedor = 0;
             int alturaPanelContenedor = yOnReleased;
             int limiteCaida = 0;
             boolean mismoOrigen=false;
-            
-            
             if(discoSeleccionado.getX()<=350)
             {
-                centroPanelContenedor=300-(discoSeleccionado.getWidth()/2)+(discoSeleccionado.getHeight()/2);
+                centroPanelContenedor=323-(discoSeleccionado.getWidth()/2)+(discoSeleccionado.getHeight()/2);
                 //animacion.setLimite(pila1.gettLimiteCaida());
                 limiteCaida = pila1.gettLimiteCaida();
                 if(PanelJuego.this.xOnClicked<=350)
@@ -143,6 +210,7 @@ public class PanelJuego extends JPanel
                     System.out.println(limiteCaida+"");
                     animarDiscos(limiteCaida+20,discoSeleccionado,centroPanelContenedor,alturaPanelContenedor);
                     mismoOrigen=true;
+                 
                 } 
                 else{
                     animarDiscos(limiteCaida,discoSeleccionado,centroPanelContenedor,alturaPanelContenedor);
@@ -159,7 +227,7 @@ public class PanelJuego extends JPanel
             }
             if(discoSeleccionado.getX()>350 && discoSeleccionado.getX()<=650)
             {
-                centroPanelContenedor=600-(discoSeleccionado.getWidth()/2)+(discoSeleccionado.getHeight()/2);
+                centroPanelContenedor=623-(discoSeleccionado.getWidth()/2)+(discoSeleccionado.getHeight()/2);
                 //animacion.setLimite(pila2.gettLimiteCaida());
                 limiteCaida = pila2.gettLimiteCaida();
                 
@@ -184,7 +252,7 @@ public class PanelJuego extends JPanel
             }
             if(discoSeleccionado.getX()>650)
             {
-                centroPanelContenedor=900-(discoSeleccionado.getWidth()/2)+(discoSeleccionado.getHeight()/2);
+                centroPanelContenedor=923-(discoSeleccionado.getWidth()/2)+(discoSeleccionado.getHeight()/2);
                 //animacion.setLimite(pila3.gettLimiteCaida());
                 limiteCaida = pila3.gettLimiteCaida();
                 if(PanelJuego.this.xOnClicked>650)
@@ -206,8 +274,9 @@ public class PanelJuego extends JPanel
                     }
                 }
             }
+           
             discoSeleccionado = null;
-             
+            
 
         }
     }
