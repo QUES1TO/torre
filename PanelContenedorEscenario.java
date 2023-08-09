@@ -5,7 +5,7 @@ public class PanelContenedorEscenario extends JPanel
     private Graphics2D g2d;
     private Pila pila;
     private int x, y;
-    private int limiteCaida = 720;
+    private int limiteCaida = 520;
     public PanelContenedorEscenario(double x, double y, double width, double height, double arcWidth, Color color)
     {
         setLayout(null);

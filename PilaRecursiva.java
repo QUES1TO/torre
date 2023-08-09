@@ -84,7 +84,6 @@ public class PilaRecursiva<T>
    }
     public T pop(){
      
-      
             if (sig == null)
             {
                 T dato = ini.getValor();

@@ -4,9 +4,6 @@ import java.util.ArrayList;
 import java.awt.event.*;
 public class PanelJuego extends JPanel
 {
-    
-    
-    
     private Graphics2D g2d;
     private ArrayList<Disco> brillos;
     private ArrayList<Disco> discos;
@@ -27,7 +24,6 @@ public class PanelJuego extends JPanel
     private Robot robot;
     private int startY;
     private ImageIcon fondo;
-    
     private int dato = 0;
     private JLabel label, label2;
      private JPanel panel, panel2 ,panel3,panel4,panel5;
@@ -62,7 +58,8 @@ public class PanelJuego extends JPanel
         }
         
         img= new ImageIcon(getClass().getResource("img4.jpg"));
-         label = new JLabel("iso: 0 movimientos");
+         
+        label = new JLabel("iso: 0 movimientos");
         label.setBounds(60,0,200,200);
         label.setVisible(true);
         label.setBackground(Color.WHITE);
@@ -76,30 +73,30 @@ public class PanelJuego extends JPanel
         add(panel);
         
         panel3=new JPanel();
-        panel3.setBounds(174, 340, 265, 420);
+        panel3.setBounds(174, 140, 265, 420);
         panel3.setVisible(true);
         panel3.setBackground(new Color(44, 117, 255, 50));
         add(panel3);
         
         panel4=new JPanel();
-        panel4.setBounds(474, 340, 265, 420);
+        panel4.setBounds(474, 140, 265, 420);
         panel4.setVisible(true);
         panel4.setBackground(new Color(44, 117, 255, 50));
         add(panel4);
         
         panel5=new JPanel();
-        panel5.setBounds(774, 340, 265, 420);
+        panel5.setBounds(774, 140, 265, 420);
         panel5.setVisible(true);
         panel5.setBackground(new Color(44, 117, 255, 50));
         add(panel5);
              
         label2 = new JLabel();
-        label2.setBounds(0,0,1200,1200);
+        label2.setBounds(0,0,1200,800);
         label2.setVisible(true);
         add(label2);
         
         panel2 = new JPanel();
-        panel2.setBounds(0,0,1200,1200);
+        panel2.setBounds(0,0,1200,800);
         Icon i4= new ImageIcon(img.getImage().getScaledInstance(panel2.getWidth(),panel2.getHeight(),Image.SCALE_DEFAULT));
         label2.setIcon(i4);
         panel2.setVisible(true);
@@ -118,14 +115,12 @@ public class PanelJuego extends JPanel
  */
     public void prepararEscenario()
     {
-        
         pilaRecursiva1 = new PilaRecursiva<PanelContenedor>(); 
         pilaRecursiva2 = new PilaRecursiva<PanelContenedor>(); 
         pilaRecursiva3 = new PilaRecursiva<PanelContenedor>();
         pilaRecursiva4 = new PilaRecursiva<PanelContenedor>();
         pilaRecursiva5 = new PilaRecursiva<PanelContenedor>();
         pilaRecursiva6 = new PilaRecursiva<PanelContenedor>();
-        
         
         pila4 = new PanelContenedorEscenario(0,0,25,393,20, Color.white);
         pila5 = new PanelContenedorEscenario(0,0,25,393,20, Color.white);
@@ -136,16 +131,15 @@ public class PanelJuego extends JPanel
         pila3 = new PanelContenedorEscenario(0,0,20,400,20, Color.BLACK);
         suelo = new PanelContenedorEscenario(0,0,1200,500,20, Color.BLACK);
         
-        pila4.setBounds(298,350,25,393);
-        pila5.setBounds(598,350,25,393);
-        pila6.setBounds(898,350,25,393);
+        pila4.setBounds(298,150,25,393);
+        pila5.setBounds(598,150,25,393);
+        pila6.setBounds(898,150,25,393);
         
-        pila1.setBounds(300,350,20,400);
-        pila2.setBounds(600,350,20,400);
-        pila3.setBounds(900,350,20,400);
-        suelo.setBounds(0,740,1200,20);
+        suelo.setBounds(0,540,1200,20);
+        pila1.setBounds(300,150,20,400);
+        pila2.setBounds(600,150,20,400);
+        pila3.setBounds(900,150,20,400);
         
-       
         add(pila1);
         add(pila2);
         add(pila3);
@@ -153,8 +147,6 @@ public class PanelJuego extends JPanel
         add(pila5);
         add(pila6);
         add(suelo);
-        
-        
     }
     
     public void llenarListaDeDiscos()
@@ -174,7 +166,6 @@ public class PanelJuego extends JPanel
             anchoDeDisco-=30;
             int limiteCaida = pila1.gettLimiteCaida();
             pila1.setLimiteCaida(limiteCaida-20);
-           
         }
     }
     
@@ -191,9 +182,7 @@ public class PanelJuego extends JPanel
             dato++;
             label.setText("iso: " + dato+" "+"movimientos");
         }
-        
-       
-    
+ 
         public void mouseReleased(MouseEvent e) {
                
             int centroPanelContenedor = 0;
@@ -318,7 +307,6 @@ public class PanelJuego extends JPanel
                 int y = e.getYOnScreen() - offsetY - PanelJuego.this.getLocationOnScreen().y;
                 xOnReleased = x;
                 yOnReleased = y;
-                
                 if(y>150 && y<=520)
                 {
                   if(xx<=350)
