@@ -84,14 +84,15 @@ public class PilaRecursiva<T>
    }
     public T pop(){
      
-            if (sig == null)
+      
+            if (size()>0)
             {
-                T dato = ini.getValor();
-                ini=null;
-                return dato;
+                T respuesta=get(size()-1);
+                remove(size()-1);
+                return respuesta;
             }
             else {
-                return sig.pop();
+                return null;
             }
        
     }

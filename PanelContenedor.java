@@ -20,12 +20,15 @@ public class PanelContenedor extends JPanel
         iniciarDisco();     
     }
     public void iniciarDisco()
-    {               
+    {        
+            
             g2d.setColor(disco.getColor());
             g2d.fill(disco);
             g2d.setColor(brillo.getColor());
             g2d.fill(brillo);
 
+        
+        
     }
     public void setPosX(int x)
     {
